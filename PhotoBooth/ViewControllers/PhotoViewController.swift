@@ -16,6 +16,8 @@ class PhotoViewController: UIViewController {
     
     var photo: UIImage?
     
+    private var photoService = PhotoService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,12 +47,21 @@ private extension PhotoViewController {
         
         PHPhotoLibrary.shared().performChanges({
             let creationRequest = PHAssetCreationRequest.creationRequestForAsset(from: image)
-            let identifier = creationRequest.placeholderForCreatedAsset?.localIdentifier
+            self.savePhoto(withIdentifier: creationRequest.placeholderForCreatedAsset?.localIdentifier)
             
-            print("____identifier: \(identifier ?? "blah")")
         }) { (result, error) in
             self.dismiss(animated: true, completion: nil)
         }
+    }
+    
+}
+
+private extension PhotoViewController {
+    
+    func savePhoto(withIdentifier localIdentifier: String?) {
+        guard let localIdentifier = localIdentifier else { return }
+        
+        photoService.savePhoto(withIdentifier: localIdentifier, title: nil)
     }
     
 }

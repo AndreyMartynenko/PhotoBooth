@@ -13,6 +13,12 @@ struct PhotoModel {
     var title: String?
     var timestamp: String!
     
+    init(localIdentifier: String, title: String?, timestamp: String) {
+        self.localIdentifier = localIdentifier
+        self.title = title
+        self.timestamp = timestamp
+    }
+    
     init(withDao dao: PhotoDao) {
         localIdentifier = dao.localIdentifier
         title = dao.title

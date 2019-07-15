@@ -18,6 +18,9 @@
 		950C89CB22DCAE5F00B6001A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89CA22DCAE5F00B6001A /* AppDelegate.swift */; };
 		950C89CF22DCB14300B6001A /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89CE22DCB14200B6001A /* PhotoModel.swift */; };
 		950C89D422DCB26200B6001A /* PhotoDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89D322DCB26200B6001A /* PhotoDao.swift */; };
+		950C89D822DCB45500B6001A /* PhotoDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89D722DCB45500B6001A /* PhotoDataService.swift */; };
+		950C89DA22DCBE2300B6001A /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89D922DCBE2300B6001A /* PhotoService.swift */; };
+		950C89DC22DCC56600B6001A /* AbstractDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89DB22DCC56500B6001A /* AbstractDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		950C89CA22DCAE5F00B6001A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		950C89CE22DCB14200B6001A /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 		950C89D322DCB26200B6001A /* PhotoDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDao.swift; sourceTree = "<group>"; };
+		950C89D722DCB45500B6001A /* PhotoDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataService.swift; sourceTree = "<group>"; };
+		950C89D922DCBE2300B6001A /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
+		950C89DB22DCC56500B6001A /* AbstractDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractDataService.swift; sourceTree = "<group>"; };
 		9B19DCCE7184C2ED727FFEC5 /* Pods-PhotoBooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBooth.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoBooth/Pods-PhotoBooth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +152,7 @@
 		950C89CC22DCB0DE00B6001A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				950C89DD22DCC66A00B6001A /* Generic */,
 				950C89D022DCB17300B6001A /* Photo */,
 			);
 			path = Models;
@@ -154,6 +161,7 @@
 		950C89CD22DCB0EE00B6001A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				950C89D522DCB43700B6001A /* Photo */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -181,6 +189,31 @@
 				950C89D322DCB26200B6001A /* PhotoDao.swift */,
 			);
 			path = Dao;
+			sourceTree = "<group>";
+		};
+		950C89D522DCB43700B6001A /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				950C89D622DCB43F00B6001A /* Data */,
+				950C89D922DCBE2300B6001A /* PhotoService.swift */,
+			);
+			path = Photo;
+			sourceTree = "<group>";
+		};
+		950C89D622DCB43F00B6001A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				950C89D722DCB45500B6001A /* PhotoDataService.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		950C89DD22DCC66A00B6001A /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				950C89DB22DCC56500B6001A /* AbstractDataService.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,7 +331,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950C89DA22DCBE2300B6001A /* PhotoService.swift in Sources */,
+				950C89DC22DCC56600B6001A /* AbstractDataService.swift in Sources */,
 				950C89CB22DCAE5F00B6001A /* AppDelegate.swift in Sources */,
+				950C89D822DCB45500B6001A /* PhotoDataService.swift in Sources */,
 				950C89D422DCB26200B6001A /* PhotoDao.swift in Sources */,
 				950C89C922DC90BF00B6001A /* UIViewController+Instantiation.swift in Sources */,
 				950C89BD22DC860100B6001A /* MainViewController.swift in Sources */,

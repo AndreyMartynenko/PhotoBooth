@@ -11,15 +11,9 @@ import RealmSwift
 
 class PhotoDao: Object {
     
-    @objc dynamic var identifier: String = "1"
-    
     @objc dynamic var localIdentifier: String!
     @objc dynamic var title: String?
     @objc dynamic var timestamp: String!
-    
-    override public static func primaryKey() -> String? {
-        return "identifier"
-    }
     
     convenience init(withPhoto photo: PhotoModel) {
         self.init()
