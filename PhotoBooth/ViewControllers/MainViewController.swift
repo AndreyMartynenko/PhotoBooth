@@ -13,7 +13,6 @@ import AVFoundation
 class MainViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet private weak var previewView: UIView!
-    @IBOutlet private weak var capturedImageView: UIImageView!
     
     private var captureSession: AVCaptureSession!
     private var captureOutput: AVCapturePhotoOutput!
@@ -125,8 +124,10 @@ private extension MainViewController {
         captureOutput.capturePhoto(with: photoSettings, delegate: self)
     }
     
-    @IBAction func cancelButtonTapped(_ sender: UIButton) {
-        view.bringSubviewToFront(previewView)
+    @IBAction func photoGalleryButtonTapped(_ sender: UIButton) {
+        guard let viewController = UIViewController.instantiate(withClass: PhotoGalleryViewController.self) else { return }
+        
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func toggleCameraButtonTapped(_ sender: UIButton) {

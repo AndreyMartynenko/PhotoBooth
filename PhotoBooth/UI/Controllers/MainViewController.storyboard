@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xZk-2r-zDV">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="siN-bg-BgE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Photo booth-->
         <scene sceneID="kII-ZL-LjQ">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="xZk-2r-zDV" customClass="MainViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,11 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wwu-sv-KzT">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kif-es-wZI">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcf-2f-0J4">
@@ -48,9 +45,9 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-UY-4VD">
                                         <rect key="frame" x="319" y="0.0" width="48" height="44"/>
-                                        <state key="normal" title="Cancel"/>
+                                        <state key="normal" title="Gallery"/>
                                         <connections>
-                                            <action selector="cancelButtonTapped:" destination="xZk-2r-zDV" eventType="touchUpInside" id="lu1-Nc-nwr"/>
+                                            <action selector="photoGalleryButtonTapped:" destination="xZk-2r-zDV" eventType="touchUpInside" id="fr0-ZY-ab3"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -73,24 +70,38 @@
                         <constraints>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="bottom" secondItem="qar-ta-Z1k" secondAttribute="bottom" id="3xZ-Le-sT7"/>
                             <constraint firstItem="kif-es-wZI" firstAttribute="top" secondItem="qar-ta-Z1k" secondAttribute="top" id="5KG-Rl-6D0"/>
-                            <constraint firstItem="Wwu-sv-KzT" firstAttribute="top" secondItem="qar-ta-Z1k" secondAttribute="top" id="AbU-J9-egj"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="top" secondItem="kif-es-wZI" secondAttribute="bottom" id="CVQ-0N-MAZ"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="trailing" secondItem="qar-ta-Z1k" secondAttribute="trailing" id="D9o-Gi-wki"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="leading" secondItem="qar-ta-Z1k" secondAttribute="leading" id="Xcy-oR-hMz"/>
-                            <constraint firstItem="vcf-2f-0J4" firstAttribute="top" secondItem="Wwu-sv-KzT" secondAttribute="bottom" id="aCs-Om-RGC"/>
                             <constraint firstItem="kif-es-wZI" firstAttribute="leading" secondItem="qar-ta-Z1k" secondAttribute="leading" id="fok-3q-ncg"/>
                             <constraint firstItem="kif-es-wZI" firstAttribute="trailing" secondItem="qar-ta-Z1k" secondAttribute="trailing" id="ie0-Pg-lc4"/>
-                            <constraint firstItem="Wwu-sv-KzT" firstAttribute="leading" secondItem="qar-ta-Z1k" secondAttribute="leading" id="uI7-0N-MEq"/>
-                            <constraint firstItem="Wwu-sv-KzT" firstAttribute="trailing" secondItem="qar-ta-Z1k" secondAttribute="trailing" id="vx1-hp-Z0o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qar-ta-Z1k"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Photo booth" id="xij-4o-Ohn"/>
                     <connections>
-                        <outlet property="capturedImageView" destination="Wwu-sv-KzT" id="rpH-gb-u79"/>
                         <outlet property="previewView" destination="kif-es-wZI" id="ogy-43-7F1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7he-pB-1fD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1077.5999999999999" y="104.7976011994003"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="gin-JX-3OR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="siN-bg-BgE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ds9-s4-gS0">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xZk-2r-zDV" kind="relationship" relationship="rootViewController" id="ahe-YY-jak"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAI-ED-je2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="104.7976011994003"/>
         </scene>

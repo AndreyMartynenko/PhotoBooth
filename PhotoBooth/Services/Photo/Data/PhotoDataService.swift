@@ -20,7 +20,7 @@ class PhotoDataService: AbstractDataService {
         return realm?.objects(PhotoDao.self).compactMap { PhotoModel(withDao: $0) }
     }
     
-    func deleteAllPhotos(withPredicate predicate: NSPredicate? = nil) throws {
+    func deletePhotos(withPredicate predicate: NSPredicate? = nil) throws {
         try safeWrite {
             var objects = realm?.objects(PhotoDao.self)
             
