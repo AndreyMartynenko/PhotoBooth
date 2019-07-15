@@ -27,6 +27,11 @@
 		950C89F222DCD93200B6001A /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89F122DCD93200B6001A /* FullscreenViewController.swift */; };
 		950C89FA22DCDD6C00B6001A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89F922DCDD6C00B6001A /* ImageService.swift */; };
 		950C89FC22DCDEC300B6001A /* FullscreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89FB22DCDEC300B6001A /* FullscreenViewController.storyboard */; };
+		950C8A0222DD0CE700B6001A /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C8A0122DD0CE600B6001A /* ErrorView.swift */; };
+		950C8A0522DD0D5A00B6001A /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C8A0422DD0D5A00B6001A /* NibView.swift */; };
+		950C8A0722DD0DC000B6001A /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C8A0622DD0DC000B6001A /* UIView+Nib.swift */; };
+		950C8A0922DD0E3100B6001A /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C8A0822DD0E3100B6001A /* UIView+Constraints.swift */; };
+		950C8A0B22DD102900B6001A /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 950C8A0A22DD102900B6001A /* ErrorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,11 @@
 		950C89F122DCD93200B6001A /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
 		950C89F922DCDD6C00B6001A /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		950C89FB22DCDEC300B6001A /* FullscreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FullscreenViewController.storyboard; sourceTree = "<group>"; };
+		950C8A0122DD0CE600B6001A /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		950C8A0422DD0D5A00B6001A /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
+		950C8A0622DD0DC000B6001A /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		950C8A0822DD0E3100B6001A /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		950C8A0A22DD102900B6001A /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 		9B19DCCE7184C2ED727FFEC5 /* Pods-PhotoBooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBooth.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoBooth/Pods-PhotoBooth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +143,7 @@
 			children = (
 				950C89E322DCC9C100B6001A /* Controllers */,
 				950C89E522DCC9D800B6001A /* Cells */,
+				950C89FE22DD0CA500B6001A /* Views */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -158,6 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				950C89C822DC90BF00B6001A /* UIViewController+Instantiation.swift */,
+				950C8A0622DD0DC000B6001A /* UIView+Nib.swift */,
+				950C8A0822DD0E3100B6001A /* UIView+Constraints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,6 +271,32 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		950C89FE22DD0CA500B6001A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				950C8A0322DD0D4A00B6001A /* Generic */,
+				950C8A0022DD0CC500B6001A /* Error */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		950C8A0022DD0CC500B6001A /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				950C8A0122DD0CE600B6001A /* ErrorView.swift */,
+				950C8A0A22DD102900B6001A /* ErrorView.xib */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		950C8A0322DD0D4A00B6001A /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				950C8A0422DD0D5A00B6001A /* NibView.swift */,
+			);
+			path = Generic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,6 +361,7 @@
 				950C89AE22DC82C400B6001A /* Assets.xcassets in Resources */,
 				950C89FC22DCDEC300B6001A /* FullscreenViewController.storyboard in Resources */,
 				950C89E822DCCA5100B6001A /* LaunchScreen.storyboard in Resources */,
+				950C8A0B22DD102900B6001A /* ErrorView.xib in Resources */,
 				950C89EC22DCCA5900B6001A /* PhotoViewController.storyboard in Resources */,
 				950C89EE22DCCA5900B6001A /* PhotoGalleryViewController.storyboard in Resources */,
 			);
@@ -381,13 +421,17 @@
 				950C89D822DCB45500B6001A /* PhotoDataService.swift in Sources */,
 				950C89DF22DCC77D00B6001A /* PhotoGalleryViewController.swift in Sources */,
 				950C89D422DCB26200B6001A /* PhotoDao.swift in Sources */,
+				950C8A0922DD0E3100B6001A /* UIView+Constraints.swift in Sources */,
 				950C89C922DC90BF00B6001A /* UIViewController+Instantiation.swift in Sources */,
 				950C89F222DCD93200B6001A /* FullscreenViewController.swift in Sources */,
+				950C8A0722DD0DC000B6001A /* UIView+Nib.swift in Sources */,
 				950C89BD22DC860100B6001A /* MainViewController.swift in Sources */,
 				950C89CF22DCB14300B6001A /* PhotoModel.swift in Sources */,
 				950C89F022DCCE3100B6001A /* PhotoCell.swift in Sources */,
+				950C8A0222DD0CE700B6001A /* ErrorView.swift in Sources */,
 				950C89C122DC8EFD00B6001A /* PhotoViewController.swift in Sources */,
 				950C89FA22DCDD6C00B6001A /* ImageService.swift in Sources */,
+				950C8A0522DD0D5A00B6001A /* NibView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

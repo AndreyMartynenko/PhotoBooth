@@ -18,6 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oBj-yj-Z05" customClass="ErrorView" customModule="PhotoBooth" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kif-es-wZI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -68,18 +71,23 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="oBj-yj-Z05" firstAttribute="top" secondItem="qar-ta-Z1k" secondAttribute="top" id="2et-vy-gqC"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="bottom" secondItem="qar-ta-Z1k" secondAttribute="bottom" id="3xZ-Le-sT7"/>
                             <constraint firstItem="kif-es-wZI" firstAttribute="top" secondItem="qar-ta-Z1k" secondAttribute="top" id="5KG-Rl-6D0"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="top" secondItem="kif-es-wZI" secondAttribute="bottom" id="CVQ-0N-MAZ"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="trailing" secondItem="qar-ta-Z1k" secondAttribute="trailing" id="D9o-Gi-wki"/>
+                            <constraint firstItem="oBj-yj-Z05" firstAttribute="leading" secondItem="qar-ta-Z1k" secondAttribute="leading" id="FvS-BK-R7b"/>
                             <constraint firstItem="vcf-2f-0J4" firstAttribute="leading" secondItem="qar-ta-Z1k" secondAttribute="leading" id="Xcy-oR-hMz"/>
+                            <constraint firstItem="oBj-yj-Z05" firstAttribute="bottom" secondItem="qar-ta-Z1k" secondAttribute="bottom" id="YfT-qs-a08"/>
                             <constraint firstItem="kif-es-wZI" firstAttribute="leading" secondItem="qar-ta-Z1k" secondAttribute="leading" id="fok-3q-ncg"/>
                             <constraint firstItem="kif-es-wZI" firstAttribute="trailing" secondItem="qar-ta-Z1k" secondAttribute="trailing" id="ie0-Pg-lc4"/>
+                            <constraint firstItem="oBj-yj-Z05" firstAttribute="trailing" secondItem="qar-ta-Z1k" secondAttribute="trailing" id="lUc-fd-cSh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qar-ta-Z1k"/>
                     </view>
                     <navigationItem key="navigationItem" title="Photo booth" id="xij-4o-Ohn"/>
                     <connections>
+                        <outlet property="errorView" destination="oBj-yj-Z05" id="uK8-pI-FdJ"/>
                         <outlet property="previewView" destination="kif-es-wZI" id="ogy-43-7F1"/>
                     </connections>
                 </viewController>

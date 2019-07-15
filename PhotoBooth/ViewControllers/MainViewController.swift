@@ -13,6 +13,7 @@ import AVFoundation
 class MainViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet private weak var previewView: UIView!
+    @IBOutlet private weak var errorView: ErrorView!
     
     private var captureSession: AVCaptureSession!
     private var captureOutput: AVCapturePhotoOutput!
@@ -47,8 +48,17 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
-        configureCaptureSession()
+        checkAuthorization { [weak self] result in
+            DispatchQueue.main.async {
+                if result {
+                    self?.errorView.hide()
+                    self?.configureView()
+                    self?.configureCaptureSession()
+                } else {
+                    self?.errorView.show(withTitle: "In order to use this app, please authorize usage of camera.")
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,6 +91,9 @@ private extension MainViewController {
         
         guard configureCaptureInput(at: .front) && configureCaptureOutput() else {
             captureSession.commitConfiguration()
+            DispatchQueue.main.async {
+                self.errorView.show(withTitle: "Configuration error")
+            }
             return
         }
         
@@ -142,6 +155,24 @@ private extension MainViewController {
         }
         
         captureSession.commitConfiguration()
+    }
+    
+}
+
+// MARK: - Authorization
+private extension MainViewController {
+    
+    func checkAuthorization(completion: @escaping (Bool) -> Void) {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            completion(true)
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(for: .video, completionHandler: { granted in
+                completion(granted)
+            })
+        default:
+            completion(false)
+        }
     }
     
 }

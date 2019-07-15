@@ -14,6 +14,7 @@ class PhotoViewController: UIViewController {
     
     @IBOutlet private weak var photoImageView: UIImageView!
     @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var errorView: ErrorView!
     @IBOutlet private weak var inputContainerViewBottomConstraint: NSLayoutConstraint!
     
     var photo: UIImage?
@@ -23,7 +24,16 @@ class PhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureView()
+        checkAuthorization { [weak self] result in
+            DispatchQueue.main.async {
+                if result {
+                    self?.errorView.hide()
+                    self?.configureView()
+                } else {
+                    self?.errorView.show(withTitle: "In order to use this app, please authorize usage of photo gallery.")
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,6 +134,24 @@ private extension PhotoViewController {
     
 }
 
+// MARK: - Authorization
+private extension PhotoViewController {
+    
+    func checkAuthorization(completion: @escaping (Bool) -> Void) {
+        switch PHPhotoLibrary.authorizationStatus() {
+        case .authorized:
+            completion(true)
+        case .notDetermined:
+            PHPhotoLibrary.requestAuthorization { status in
+                completion(status == .authorized)
+            }
+        default:
+            completion(false)
+        }
+    }
+    
+}
+
 // MARK: - Private methods
 private extension PhotoViewController {
     
@@ -133,6 +161,17 @@ private extension PhotoViewController {
         DispatchQueue.main.async {
             self.photoService.savePhoto(withIdentifier: localIdentifier, title: self.titleTextField.text)
         }
+    }
+    
+}
+
+// MARK: - UITextFieldDelegate implementation
+extension PhotoViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
     
 }
