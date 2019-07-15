@@ -12,6 +12,9 @@
 		950C89B122DC82C400B6001A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89AF22DC82C400B6001A /* LaunchScreen.storyboard */; };
 		950C89BD22DC860100B6001A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89BC22DC860100B6001A /* MainViewController.swift */; };
 		950C89BF22DC886B00B6001A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89BE22DC886A00B6001A /* MainViewController.storyboard */; };
+		950C89C122DC8EFD00B6001A /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89C022DC8EFD00B6001A /* PhotoViewController.swift */; };
+		950C89C322DC8FC100B6001A /* PhotoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89C222DC8FC100B6001A /* PhotoViewController.storyboard */; };
+		950C89C922DC90BF00B6001A /* UIViewController+Instantiation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89C822DC90BF00B6001A /* UIViewController+Instantiation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		950C89B222DC82C400B6001A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		950C89BC22DC860100B6001A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		950C89BE22DC886A00B6001A /* MainViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
+		950C89C022DC8EFD00B6001A /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		950C89C222DC8FC100B6001A /* PhotoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PhotoViewController.storyboard; sourceTree = "<group>"; };
+		950C89C822DC90BF00B6001A /* UIViewController+Instantiation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Instantiation.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 				950C89BA22DC854F00B6001A /* Resources */,
 				950C89B922DC854000B6001A /* UI */,
 				950C89B822DC853400B6001A /* ViewControllers */,
+				950C89C722DC909B00B6001A /* Extensions */,
 			);
 			path = PhotoBooth;
 			sourceTree = "<group>";
@@ -66,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				950C89BC22DC860100B6001A /* MainViewController.swift */,
+				950C89C022DC8EFD00B6001A /* PhotoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -75,6 +83,7 @@
 			children = (
 				950C89AF22DC82C400B6001A /* LaunchScreen.storyboard */,
 				950C89BE22DC886A00B6001A /* MainViewController.storyboard */,
+				950C89C222DC8FC100B6001A /* PhotoViewController.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -94,6 +103,14 @@
 				950C89B222DC82C400B6001A /* Info.plist */,
 			);
 			path = Configuration;
+			sourceTree = "<group>";
+		};
+		950C89C722DC909B00B6001A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				950C89C822DC90BF00B6001A /* UIViewController+Instantiation.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +173,7 @@
 			files = (
 				950C89BF22DC886B00B6001A /* MainViewController.storyboard in Resources */,
 				950C89B122DC82C400B6001A /* LaunchScreen.storyboard in Resources */,
+				950C89C322DC8FC100B6001A /* PhotoViewController.storyboard in Resources */,
 				950C89AE22DC82C400B6001A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -167,8 +185,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950C89C922DC90BF00B6001A /* UIViewController+Instantiation.swift in Sources */,
 				950C89BD22DC860100B6001A /* MainViewController.swift in Sources */,
 				950C89A722DC82C000B6001A /* AppDelegate.swift in Sources */,
+				950C89C122DC8EFD00B6001A /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

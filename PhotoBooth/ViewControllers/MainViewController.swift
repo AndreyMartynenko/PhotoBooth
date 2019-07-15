@@ -167,11 +167,12 @@ extension MainViewController: AVCapturePhotoCaptureDelegate {
     private func updateImage(_ image: UIImage?) {
         guard let currentCaptureDevice = currentCaptureDevice else { return }
         guard let image = image, let cgImage = image.cgImage else { return }
+        guard let viewController = UIViewController.instantiate(withClass: PhotoViewController.self) else { return }
         
         let mirroredImage = UIImage(cgImage: cgImage, scale: image.scale, orientation: .leftMirrored)
+        viewController.photo = currentCaptureDevice.position == .front ? mirroredImage : image
         
-        capturedImageView.image = currentCaptureDevice.position == .front ? mirroredImage : image
-        view.bringSubviewToFront(capturedImageView)
+        present(viewController, animated: true, completion: nil)
     }
     
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo View Controller-->
+        <scene sceneID="AJG-3g-LMN">
+            <objects>
+                <viewController storyboardIdentifier="PhotoViewController" id="DgN-MY-Idm" customClass="PhotoViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1AP-Hn-s2X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dJ-Ab-EZX">
+                                <rect key="frame" x="319" y="20" width="48" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="USG-n7-z8Q"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelPhotoButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="6Gc-Hg-Rcx"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-pv-IxZ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-co-79b">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEi-2n-pUC">
+                                        <rect key="frame" x="333" y="0.0" width="34" height="44"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="savePhotoButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="fTz-vX-a8y"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="nEi-2n-pUC" secondAttribute="trailing" constant="8" id="2b5-dT-yxD"/>
+                                    <constraint firstAttribute="bottom" secondItem="nEi-2n-pUC" secondAttribute="bottom" id="LIB-kh-pKM"/>
+                                    <constraint firstAttribute="height" constant="44" id="PXF-go-oMr"/>
+                                    <constraint firstItem="nEi-2n-pUC" firstAttribute="top" secondItem="mbg-co-79b" secondAttribute="top" id="TdK-wS-HVK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="a1a-pv-IxZ" firstAttribute="top" secondItem="ida-BA-RvR" secondAttribute="top" id="65S-1z-j28"/>
+                            <constraint firstItem="mbg-co-79b" firstAttribute="trailing" secondItem="ida-BA-RvR" secondAttribute="trailing" id="8qX-s9-tsx"/>
+                            <constraint firstItem="a1a-pv-IxZ" firstAttribute="trailing" secondItem="ida-BA-RvR" secondAttribute="trailing" id="HfU-pj-kor"/>
+                            <constraint firstItem="mbg-co-79b" firstAttribute="top" secondItem="a1a-pv-IxZ" secondAttribute="bottom" id="MN3-hJ-y3j"/>
+                            <constraint firstItem="mbg-co-79b" firstAttribute="leading" secondItem="ida-BA-RvR" secondAttribute="leading" id="Oen-h9-1mt"/>
+                            <constraint firstItem="mbg-co-79b" firstAttribute="bottom" secondItem="ida-BA-RvR" secondAttribute="bottom" id="VBv-sb-cqK"/>
+                            <constraint firstItem="a1a-pv-IxZ" firstAttribute="leading" secondItem="ida-BA-RvR" secondAttribute="leading" id="gID-Yz-efY"/>
+                            <constraint firstItem="ida-BA-RvR" firstAttribute="trailing" secondItem="6dJ-Ab-EZX" secondAttribute="trailing" constant="8" id="hnY-p9-zPW"/>
+                            <constraint firstItem="6dJ-Ab-EZX" firstAttribute="top" secondItem="ida-BA-RvR" secondAttribute="top" id="kkV-m1-RCs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ida-BA-RvR"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoImageView" destination="a1a-pv-IxZ" id="ePH-mW-Thj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdk-FR-r9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994.39999999999998" y="102.99850074962519"/>
+        </scene>
+    </scenes>
+</document>
