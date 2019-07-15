@@ -24,12 +24,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kif-es-wZI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="preview_view"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcf-2f-0J4">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-Pb-9ig">
                                         <rect key="frame" x="8" y="0.0" width="47" height="44"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="camera_toggle_btn"/>
                                         <state key="normal" title="Toggle"/>
                                         <connections>
                                             <action selector="toggleCameraButtonTapped:" destination="xZk-2r-zDV" eventType="touchUpInside" id="t0N-wA-V8O"/>
@@ -37,6 +39,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-va-4IS">
                                         <rect key="frame" x="165.5" y="0.0" width="44" height="44"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="take_photo_btn"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Lp4-8b-gPR"/>
                                             <constraint firstAttribute="width" secondItem="bIQ-va-4IS" secondAttribute="height" multiplier="1:1" id="veL-g7-Ted"/>
@@ -48,6 +51,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-UY-4VD">
                                         <rect key="frame" x="319" y="0.0" width="48" height="44"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="photo_gallery_btn"/>
                                         <state key="normal" title="Gallery"/>
                                         <connections>
                                             <action selector="photoGalleryButtonTapped:" destination="xZk-2r-zDV" eventType="touchUpInside" id="fr0-ZY-ab3"/>
@@ -55,6 +59,7 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="control_view"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="A8E-UY-4VD" secondAttribute="trailing" constant="8" id="4xP-tR-pWs"/>
                                     <constraint firstItem="ARe-Pb-9ig" firstAttribute="leading" secondItem="vcf-2f-0J4" secondAttribute="leading" constant="8" id="Mrb-9z-2Ny"/>
