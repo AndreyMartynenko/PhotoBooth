@@ -8,7 +8,15 @@
 
 import Foundation
 
-class PhotoDataService: AbstractDataService {
+protocol PhotoDataServiceProtocol {
+    
+    func persist(photo: PhotoModel) throws
+    func getPhotos() -> [PhotoModel]?
+    func deletePhotos(withPredicate predicate: NSPredicate?) throws
+    
+}
+
+class PhotoDataService: AbstractDataService, PhotoDataServiceProtocol {
     
     func persist(photo: PhotoModel) throws {
         try safeWrite {

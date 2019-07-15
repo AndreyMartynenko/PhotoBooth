@@ -13,8 +13,14 @@ class PhotoGalleryViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    private var photoService: PhotoService = PhotoService()
+    private var photoService: PhotoServiceProtocol!
     private var dataSource: [PhotoModel]!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        photoService = PhotoService()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

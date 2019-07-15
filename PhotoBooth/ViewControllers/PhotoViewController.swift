@@ -19,7 +19,13 @@ class PhotoViewController: UIViewController {
     
     var photo: UIImage?
     
-    private var photoService = PhotoService()
+    private var photoService: PhotoServiceProtocol!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        photoService = PhotoService()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

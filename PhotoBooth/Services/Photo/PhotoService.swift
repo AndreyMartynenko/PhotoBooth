@@ -8,9 +8,20 @@
 
 import Foundation
 
-class PhotoService {
+protocol PhotoServiceProtocol {
     
-    private var dataService = PhotoDataService()
+    func savePhoto(withIdentifier identifier: String, title: String?)
+    func getPhotos() -> [PhotoModel]
+    
+}
+
+class PhotoService: PhotoServiceProtocol {
+    
+    private var dataService: PhotoDataServiceProtocol!
+    
+    required init() {
+        dataService  = PhotoDataService()
+    }
     
     func savePhoto(withIdentifier identifier: String, title: String?) {
         try? dataService.persist(photo: PhotoModel(localIdentifier: identifier, title: title, timestamp: Date().description))

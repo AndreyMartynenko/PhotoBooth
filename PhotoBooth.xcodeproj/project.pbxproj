@@ -178,7 +178,6 @@
 		950C89CC22DCB0DE00B6001A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				950C89DD22DCC66A00B6001A /* Generic */,
 				950C89D022DCB17300B6001A /* Photo */,
 			);
 			path = Models;
@@ -187,6 +186,7 @@
 		950C89CD22DCB0EE00B6001A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				950C89DD22DCC66A00B6001A /* Generic */,
 				950C89D522DCB43700B6001A /* Photo */,
 				950C89F822DCDD6C00B6001A /* Image */,
 			);
@@ -240,7 +240,8 @@
 			children = (
 				950C89DB22DCC56500B6001A /* AbstractDataService.swift */,
 			);
-			path = Generic;
+			name = Generic;
+			path = ../Models/Generic;
 			sourceTree = "<group>";
 		};
 		950C89E322DCC9C100B6001A /* Controllers */ = {

@@ -10,9 +10,18 @@ import Foundation
 import UIKit
 import Photos
 
-class ImageService {
+protocol ImageServiceProtocol {
     
-    static var shared: ImageService = ImageService()
+    static var shared: ImageServiceProtocol { get }
+    
+    func image(withLocalIdentifier localIdentifier: String) -> UIImage?
+    func imageExists(withLocalIdentifier localIdentifier: String) -> Bool
+    
+}
+
+class ImageService: ImageServiceProtocol {
+    
+    static var shared: ImageServiceProtocol = ImageService()
     
     func image(withLocalIdentifier localIdentifier: String) -> UIImage? {
         guard let asset = asset(withLocalIdentifier: localIdentifier) else { return nil }
