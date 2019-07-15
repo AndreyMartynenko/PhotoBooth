@@ -7,11 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 struct PhotoModel {
-    var localIdentifier: String!
+    var localIdentifier: String! = ""
     var title: String?
     var timestamp: String!
+    
+    var image: UIImage? {
+        return ImageService.shared.image(withLocalIdentifier: localIdentifier)
+    }
     
     init(localIdentifier: String, title: String?, timestamp: String) {
         self.localIdentifier = localIdentifier

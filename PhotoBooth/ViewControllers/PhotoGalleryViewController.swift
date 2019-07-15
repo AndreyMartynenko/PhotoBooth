@@ -55,3 +55,17 @@ extension PhotoGalleryViewController: UICollectionViewDataSource {
     }
     
 }
+
+// MARK: - UICollectionViewDelegate implementation
+extension PhotoGalleryViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let viewController = UIViewController.instantiate(withClass: FullscreenViewController.self) else { return }
+        
+        viewController.photo = dataSource[indexPath.row].image
+        viewController.modalTransitionStyle = .crossDissolve
+        
+        present(viewController, animated: true, completion: nil)
+    }
+    
+}

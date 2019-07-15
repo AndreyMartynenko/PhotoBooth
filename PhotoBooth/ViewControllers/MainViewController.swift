@@ -146,6 +146,7 @@ private extension MainViewController {
     
 }
 
+// MARK: - AVCapturePhotoCaptureDelegate implementation
 extension MainViewController: AVCapturePhotoCaptureDelegate {
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
@@ -154,7 +155,7 @@ extension MainViewController: AVCapturePhotoCaptureDelegate {
         guard let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer else { return }
         guard let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) else { return }
         
-        updateImage(UIImage(data: dataImage))
+        processImage(UIImage(data: dataImage))
     }
     
     @available(iOS 11.0, *)
@@ -162,10 +163,10 @@ extension MainViewController: AVCapturePhotoCaptureDelegate {
         guard error == nil else { return }
         guard let dataImage = photo.fileDataRepresentation() else { return }
         
-        updateImage(UIImage(data: dataImage))
+        processImage(UIImage(data: dataImage))
     }
     
-    private func updateImage(_ image: UIImage?) {
+    private func processImage(_ image: UIImage?) {
         guard let currentCaptureDevice = currentCaptureDevice else { return }
         guard let image = image, let cgImage = image.cgImage else { return }
         guard let viewController = UIViewController.instantiate(withClass: PhotoViewController.self) else { return }

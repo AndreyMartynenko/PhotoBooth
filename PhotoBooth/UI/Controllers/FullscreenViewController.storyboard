@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Fullscreen View Controller-->
+        <scene sceneID="jpk-Nv-McY">
+            <objects>
+                <viewController storyboardIdentifier="FullscreenViewController" id="loG-bn-nMi" customClass="FullscreenViewController" customModule="PhotoBooth" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1w6-bu-7bx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AVz-kW-T8i">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUr-uB-TY8">
+                                <rect key="frame" x="319" y="20" width="48" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OeT-Ud-SYj"/>
+                                </constraints>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="loG-bn-nMi" eventType="touchUpInside" id="xr6-7g-POE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ubz-ig-XR4" firstAttribute="trailing" secondItem="EUr-uB-TY8" secondAttribute="trailing" constant="8" id="78u-aW-1gZ"/>
+                            <constraint firstItem="AVz-kW-T8i" firstAttribute="bottom" secondItem="Ubz-ig-XR4" secondAttribute="bottom" id="F7R-D7-ThL"/>
+                            <constraint firstItem="AVz-kW-T8i" firstAttribute="trailing" secondItem="Ubz-ig-XR4" secondAttribute="trailing" id="WI5-Oq-jE6"/>
+                            <constraint firstItem="AVz-kW-T8i" firstAttribute="leading" secondItem="Ubz-ig-XR4" secondAttribute="leading" id="YF6-02-Bkp"/>
+                            <constraint firstItem="AVz-kW-T8i" firstAttribute="top" secondItem="Ubz-ig-XR4" secondAttribute="top" id="mle-N1-kzI"/>
+                            <constraint firstItem="EUr-uB-TY8" firstAttribute="top" secondItem="Ubz-ig-XR4" secondAttribute="top" id="zz5-DH-OC8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ubz-ig-XR4"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="AVz-kW-T8i" id="FHK-BF-EFP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zut-HV-Qnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112.8" y="123.68815592203899"/>
+        </scene>
+    </scenes>
+</document>

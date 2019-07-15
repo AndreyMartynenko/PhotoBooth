@@ -56,6 +56,7 @@ private extension PhotoViewController {
     
 }
 
+// MARK: - Private methods
 private extension PhotoViewController {
     
     func savePhoto(withIdentifier localIdentifier: String?) {

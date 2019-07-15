@@ -24,6 +24,9 @@
 		950C89ED22DCCA5900B6001A /* MainViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89EA22DCCA5900B6001A /* MainViewController.storyboard */; };
 		950C89EE22DCCA5900B6001A /* PhotoGalleryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89EB22DCCA5900B6001A /* PhotoGalleryViewController.storyboard */; };
 		950C89F022DCCE3100B6001A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89EF22DCCE3100B6001A /* PhotoCell.swift */; };
+		950C89F222DCD93200B6001A /* FullscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89F122DCD93200B6001A /* FullscreenViewController.swift */; };
+		950C89FA22DCDD6C00B6001A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950C89F922DCDD6C00B6001A /* ImageService.swift */; };
+		950C89FC22DCDEC300B6001A /* FullscreenViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 950C89FB22DCDEC300B6001A /* FullscreenViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		950C89EA22DCCA5900B6001A /* MainViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainViewController.storyboard; sourceTree = "<group>"; };
 		950C89EB22DCCA5900B6001A /* PhotoGalleryViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PhotoGalleryViewController.storyboard; sourceTree = "<group>"; };
 		950C89EF22DCCE3100B6001A /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		950C89F122DCD93200B6001A /* FullscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenViewController.swift; sourceTree = "<group>"; };
+		950C89F922DCDD6C00B6001A /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		950C89FB22DCDEC300B6001A /* FullscreenViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FullscreenViewController.storyboard; sourceTree = "<group>"; };
 		9B19DCCE7184C2ED727FFEC5 /* Pods-PhotoBooth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoBooth.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoBooth/Pods-PhotoBooth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +123,7 @@
 				950C89BC22DC860100B6001A /* MainViewController.swift */,
 				950C89C022DC8EFD00B6001A /* PhotoViewController.swift */,
 				950C89DE22DCC77D00B6001A /* PhotoGalleryViewController.swift */,
+				950C89F122DCD93200B6001A /* FullscreenViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				950C89D522DCB43700B6001A /* Photo */,
+				950C89F822DCDD6C00B6001A /* Image */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				950C89EA22DCCA5900B6001A /* MainViewController.storyboard */,
 				950C89E922DCCA5900B6001A /* PhotoViewController.storyboard */,
 				950C89EB22DCCA5900B6001A /* PhotoGalleryViewController.storyboard */,
+				950C89FB22DCDEC300B6001A /* FullscreenViewController.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +248,14 @@
 				950C89EF22DCCE3100B6001A /* PhotoCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		950C89F822DCDD6C00B6001A /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				950C89F922DCDD6C00B6001A /* ImageService.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +320,7 @@
 			files = (
 				950C89ED22DCCA5900B6001A /* MainViewController.storyboard in Resources */,
 				950C89AE22DC82C400B6001A /* Assets.xcassets in Resources */,
+				950C89FC22DCDEC300B6001A /* FullscreenViewController.storyboard in Resources */,
 				950C89E822DCCA5100B6001A /* LaunchScreen.storyboard in Resources */,
 				950C89EC22DCCA5900B6001A /* PhotoViewController.storyboard in Resources */,
 				950C89EE22DCCA5900B6001A /* PhotoGalleryViewController.storyboard in Resources */,
@@ -364,10 +382,12 @@
 				950C89DF22DCC77D00B6001A /* PhotoGalleryViewController.swift in Sources */,
 				950C89D422DCB26200B6001A /* PhotoDao.swift in Sources */,
 				950C89C922DC90BF00B6001A /* UIViewController+Instantiation.swift in Sources */,
+				950C89F222DCD93200B6001A /* FullscreenViewController.swift in Sources */,
 				950C89BD22DC860100B6001A /* MainViewController.swift in Sources */,
 				950C89CF22DCB14300B6001A /* PhotoModel.swift in Sources */,
 				950C89F022DCCE3100B6001A /* PhotoCell.swift in Sources */,
 				950C89C122DC8EFD00B6001A /* PhotoViewController.swift in Sources */,
+				950C89FA22DCDD6C00B6001A /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

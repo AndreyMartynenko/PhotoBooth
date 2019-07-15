@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Photos
 
 class PhotoService {
     
@@ -25,7 +24,7 @@ class PhotoService {
         var photos: [PhotoModel] = []
         
         dbPhotos.forEach { (photo) in
-            if PHAsset.fetchAssets(withLocalIdentifiers: [photo.localIdentifier], options: nil).firstObject != nil {
+            if ImageService.shared.imageExists(withLocalIdentifier: photo.localIdentifier) {
                 photos.append(photo)
             } else {
                 let predicate = NSPredicate(format: "localIdentifier = %@", photo.localIdentifier)
