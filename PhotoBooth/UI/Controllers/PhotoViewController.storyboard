@@ -22,27 +22,28 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dJ-Ab-EZX">
-                                <rect key="frame" x="319" y="20" width="48" height="44"/>
-                                <accessibility key="accessibilityConfiguration" identifier="cancel_btn"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="USG-n7-z8Q"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="6Gc-Hg-Rcx"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-pv-IxZ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="603"/>
                                 <accessibility key="accessibilityConfiguration" identifier="photo_view"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dJ-Ab-EZX">
+                                <rect key="frame" x="331" y="20" width="44" height="44"/>
+                                <accessibility key="accessibilityConfiguration" identifier="cancel_btn"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="USG-n7-z8Q"/>
+                                    <constraint firstAttribute="width" constant="44" id="q9a-kc-nTk"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" image="ic_cancel"/>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="6Gc-Hg-Rcx"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-co-79b">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFo-F5-l8w">
-                                        <rect key="frame" x="8" y="7" width="317" height="30"/>
+                                        <rect key="frame" x="8" y="7" width="323" height="30"/>
                                         <accessibility key="accessibilityConfiguration" identifier="photo_title_fld"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -51,10 +52,14 @@
                                             <outlet property="delegate" destination="DgN-MY-Idm" id="kjF-Qk-ZuG"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEi-2n-pUC">
-                                        <rect key="frame" x="333" y="0.0" width="34" height="44"/>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEi-2n-pUC">
+                                        <rect key="frame" x="331" y="0.0" width="44" height="44"/>
                                         <accessibility key="accessibilityConfiguration" identifier="save_btn"/>
-                                        <state key="normal" title="Save"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="3Cq-rS-hhY"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                        <state key="normal" image="ic_save"/>
                                         <connections>
                                             <action selector="savePhotoButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="fTz-vX-a8y"/>
                                         </connections>
@@ -63,11 +68,11 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="input_view"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="nEi-2n-pUC" secondAttribute="trailing" constant="8" id="2b5-dT-yxD"/>
+                                    <constraint firstAttribute="trailing" secondItem="nEi-2n-pUC" secondAttribute="trailing" id="2b5-dT-yxD"/>
                                     <constraint firstAttribute="bottom" secondItem="nEi-2n-pUC" secondAttribute="bottom" id="LIB-kh-pKM"/>
                                     <constraint firstAttribute="height" constant="44" id="PXF-go-oMr"/>
                                     <constraint firstItem="nEi-2n-pUC" firstAttribute="top" secondItem="mbg-co-79b" secondAttribute="top" id="TdK-wS-HVK"/>
-                                    <constraint firstItem="nEi-2n-pUC" firstAttribute="leading" secondItem="hFo-F5-l8w" secondAttribute="trailing" constant="8" id="Yut-VT-ufY"/>
+                                    <constraint firstItem="nEi-2n-pUC" firstAttribute="leading" secondItem="hFo-F5-l8w" secondAttribute="trailing" id="Yut-VT-ufY"/>
                                     <constraint firstItem="hFo-F5-l8w" firstAttribute="leading" secondItem="mbg-co-79b" secondAttribute="leading" constant="8" id="a5a-V4-TL1"/>
                                     <constraint firstItem="hFo-F5-l8w" firstAttribute="centerY" secondItem="mbg-co-79b" secondAttribute="centerY" id="b8e-cA-BSg"/>
                                 </constraints>
@@ -86,7 +91,7 @@
                             <constraint firstItem="Gsi-e6-oYA" firstAttribute="leading" secondItem="ida-BA-RvR" secondAttribute="leading" id="XyC-kx-bFa"/>
                             <constraint firstItem="Gsi-e6-oYA" firstAttribute="bottom" secondItem="ida-BA-RvR" secondAttribute="bottom" id="c46-aY-XXo"/>
                             <constraint firstItem="a1a-pv-IxZ" firstAttribute="leading" secondItem="ida-BA-RvR" secondAttribute="leading" id="gID-Yz-efY"/>
-                            <constraint firstItem="ida-BA-RvR" firstAttribute="trailing" secondItem="6dJ-Ab-EZX" secondAttribute="trailing" constant="8" id="hnY-p9-zPW"/>
+                            <constraint firstItem="ida-BA-RvR" firstAttribute="trailing" secondItem="6dJ-Ab-EZX" secondAttribute="trailing" id="hnY-p9-zPW"/>
                             <constraint firstItem="6dJ-Ab-EZX" firstAttribute="top" secondItem="ida-BA-RvR" secondAttribute="top" id="kkV-m1-RCs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ida-BA-RvR"/>
@@ -103,4 +108,8 @@
             <point key="canvasLocation" x="994.39999999999998" y="102.99850074962519"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_cancel" width="512" height="512"/>
+        <image name="ic_save" width="225" height="225"/>
+    </resources>
 </document>

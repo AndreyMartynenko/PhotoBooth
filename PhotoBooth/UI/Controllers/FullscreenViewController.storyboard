@@ -22,13 +22,15 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <accessibility key="accessibilityConfiguration" identifier="image_view"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUr-uB-TY8">
-                                <rect key="frame" x="319" y="20" width="48" height="44"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUr-uB-TY8">
+                                <rect key="frame" x="331" y="20" width="44" height="44"/>
                                 <accessibility key="accessibilityConfiguration" identifier="cancel_btn"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="OeT-Ud-SYj"/>
+                                    <constraint firstAttribute="width" constant="44" id="v7Z-dt-iVE"/>
                                 </constraints>
-                                <state key="normal" title="Cancel"/>
+                                <inset key="imageEdgeInsets" minX="12" minY="12" maxX="12" maxY="12"/>
+                                <state key="normal" image="ic_cancel"/>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="loG-bn-nMi" eventType="touchUpInside" id="xr6-7g-POE"/>
                                 </connections>
@@ -44,7 +46,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ubz-ig-XR4" firstAttribute="trailing" secondItem="EUr-uB-TY8" secondAttribute="trailing" constant="8" id="78u-aW-1gZ"/>
+                            <constraint firstItem="Ubz-ig-XR4" firstAttribute="trailing" secondItem="EUr-uB-TY8" secondAttribute="trailing" id="78u-aW-1gZ"/>
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="bottom" secondItem="Ubz-ig-XR4" secondAttribute="bottom" id="F7R-D7-ThL"/>
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="trailing" secondItem="Ubz-ig-XR4" secondAttribute="trailing" id="WI5-Oq-jE6"/>
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="leading" secondItem="Ubz-ig-XR4" secondAttribute="leading" id="YF6-02-Bkp"/>
@@ -66,4 +68,7 @@
             <point key="canvasLocation" x="112.8" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_cancel" width="512" height="512"/>
+    </resources>
 </document>
