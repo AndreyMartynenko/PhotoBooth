@@ -150,8 +150,7 @@ extension MainViewController: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photoSampleBuffer: CMSampleBuffer?, previewPhoto previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
         
         guard error == nil else { return }
-        guard let sampleBuffer = photoSampleBuffer else { return }
-        guard let previewBuffer = previewPhotoSampleBuffer else { return }
+        guard let sampleBuffer = photoSampleBuffer, let previewBuffer = previewPhotoSampleBuffer else { return }
         guard let dataImage = AVCapturePhotoOutput.jpegPhotoDataRepresentation(forJPEGSampleBuffer: sampleBuffer, previewPhotoSampleBuffer: previewBuffer) else { return }
         
         updateImage(UIImage(data: dataImage))
@@ -166,7 +165,12 @@ extension MainViewController: AVCapturePhotoCaptureDelegate {
     }
     
     private func updateImage(_ image: UIImage?) {
-        capturedImageView.image = image
+        guard let currentCaptureDevice = currentCaptureDevice else { return }
+        guard let image = image, let cgImage = image.cgImage else { return }
+        
+        let mirroredImage = UIImage(cgImage: cgImage, scale: image.scale, orientation: .leftMirrored)
+        
+        capturedImageView.image = currentCaptureDevice.position == .front ? mirroredImage : image
         view.bringSubviewToFront(capturedImageView)
     }
     
