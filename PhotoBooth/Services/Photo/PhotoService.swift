@@ -13,9 +13,7 @@ class PhotoService {
     private var dataService = PhotoDataService()
     
     func savePhoto(withIdentifier identifier: String, title: String?) {
-        DispatchQueue.main.async {
-            try? self.dataService.persist(photo: PhotoModel(localIdentifier: identifier, title: title, timestamp: Date().description))
-        }
+        try? dataService.persist(photo: PhotoModel(localIdentifier: identifier, title: title, timestamp: Date().description))
     }
     
     func getPhotos() -> [PhotoModel] {

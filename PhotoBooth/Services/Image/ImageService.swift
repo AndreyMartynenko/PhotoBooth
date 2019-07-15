@@ -1,5 +1,5 @@
 //
-//  UtilityService.swift
+//  ImageService.swift
 //  PhotoBooth
 //
 //  Created by Martynenko Andriy on 15.07.19.

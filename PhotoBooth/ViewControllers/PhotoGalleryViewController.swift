@@ -62,7 +62,9 @@ extension PhotoGalleryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let viewController = UIViewController.instantiate(withClass: FullscreenViewController.self) else { return }
         
-        viewController.photo = dataSource[indexPath.row].image
+        let proto = dataSource[indexPath.row]
+        viewController.photo = proto.image
+        viewController.photoTitle = proto.title
         viewController.modalTransitionStyle = .crossDissolve
         
         present(viewController, animated: true, completion: nil)

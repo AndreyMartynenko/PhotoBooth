@@ -12,8 +12,10 @@ import UIKit
 class FullscreenViewController: UIViewController {
     
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     var photo: UIImage?
+    var photoTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,7 @@ private extension FullscreenViewController {
     
     func configureView() {
         imageView.image = photo
+        titleLabel.text = photoTitle
     }
     
 }

@@ -26,7 +26,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="cancelPhotoButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="6Gc-Hg-Rcx"/>
+                                    <action selector="cancelButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="6Gc-Hg-Rcx"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a1a-pv-IxZ">
@@ -42,6 +42,12 @@
                                             <action selector="savePhotoButtonTapped:" destination="DgN-MY-Idm" eventType="touchUpInside" id="fTz-vX-a8y"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hFo-F5-l8w">
+                                        <rect key="frame" x="8" y="7" width="317" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -49,6 +55,9 @@
                                     <constraint firstAttribute="bottom" secondItem="nEi-2n-pUC" secondAttribute="bottom" id="LIB-kh-pKM"/>
                                     <constraint firstAttribute="height" constant="44" id="PXF-go-oMr"/>
                                     <constraint firstItem="nEi-2n-pUC" firstAttribute="top" secondItem="mbg-co-79b" secondAttribute="top" id="TdK-wS-HVK"/>
+                                    <constraint firstItem="nEi-2n-pUC" firstAttribute="leading" secondItem="hFo-F5-l8w" secondAttribute="trailing" constant="8" id="Yut-VT-ufY"/>
+                                    <constraint firstItem="hFo-F5-l8w" firstAttribute="leading" secondItem="mbg-co-79b" secondAttribute="leading" constant="8" id="a5a-V4-TL1"/>
+                                    <constraint firstItem="hFo-F5-l8w" firstAttribute="centerY" secondItem="mbg-co-79b" secondAttribute="centerY" id="b8e-cA-BSg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -56,8 +65,8 @@
                         <constraints>
                             <constraint firstItem="a1a-pv-IxZ" firstAttribute="top" secondItem="ida-BA-RvR" secondAttribute="top" id="65S-1z-j28"/>
                             <constraint firstItem="mbg-co-79b" firstAttribute="trailing" secondItem="ida-BA-RvR" secondAttribute="trailing" id="8qX-s9-tsx"/>
+                            <constraint firstItem="ida-BA-RvR" firstAttribute="bottom" secondItem="a1a-pv-IxZ" secondAttribute="bottom" constant="44" id="ChC-sj-eE2"/>
                             <constraint firstItem="a1a-pv-IxZ" firstAttribute="trailing" secondItem="ida-BA-RvR" secondAttribute="trailing" id="HfU-pj-kor"/>
-                            <constraint firstItem="mbg-co-79b" firstAttribute="top" secondItem="a1a-pv-IxZ" secondAttribute="bottom" id="MN3-hJ-y3j"/>
                             <constraint firstItem="mbg-co-79b" firstAttribute="leading" secondItem="ida-BA-RvR" secondAttribute="leading" id="Oen-h9-1mt"/>
                             <constraint firstItem="mbg-co-79b" firstAttribute="bottom" secondItem="ida-BA-RvR" secondAttribute="bottom" id="VBv-sb-cqK"/>
                             <constraint firstItem="a1a-pv-IxZ" firstAttribute="leading" secondItem="ida-BA-RvR" secondAttribute="leading" id="gID-Yz-efY"/>
@@ -67,7 +76,9 @@
                         <viewLayoutGuide key="safeArea" id="ida-BA-RvR"/>
                     </view>
                     <connections>
+                        <outlet property="inputContainerViewBottomConstraint" destination="VBv-sb-cqK" id="Spn-cF-viZ"/>
                         <outlet property="photoImageView" destination="a1a-pv-IxZ" id="ePH-mW-Thj"/>
+                        <outlet property="titleTextField" destination="hFo-F5-l8w" id="ZwB-Do-jkN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wdk-FR-r9P" userLabel="First Responder" sceneMemberID="firstResponder"/>

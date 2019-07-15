@@ -31,6 +31,13 @@
                                     <action selector="cancelButtonTapped:" destination="loG-bn-nMi" eventType="touchUpInside" id="xr6-7g-POE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBo-Pr-THI">
+                                <rect key="frame" x="8" y="651" width="359" height="0.0"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -38,13 +45,17 @@
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="bottom" secondItem="Ubz-ig-XR4" secondAttribute="bottom" id="F7R-D7-ThL"/>
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="trailing" secondItem="Ubz-ig-XR4" secondAttribute="trailing" id="WI5-Oq-jE6"/>
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="leading" secondItem="Ubz-ig-XR4" secondAttribute="leading" id="YF6-02-Bkp"/>
+                            <constraint firstItem="Ubz-ig-XR4" firstAttribute="trailing" secondItem="RBo-Pr-THI" secondAttribute="trailing" constant="8" id="a8O-vD-AmN"/>
                             <constraint firstItem="AVz-kW-T8i" firstAttribute="top" secondItem="Ubz-ig-XR4" secondAttribute="top" id="mle-N1-kzI"/>
+                            <constraint firstItem="RBo-Pr-THI" firstAttribute="leading" secondItem="Ubz-ig-XR4" secondAttribute="leading" constant="8" id="sAs-Bp-rvU"/>
+                            <constraint firstItem="Ubz-ig-XR4" firstAttribute="bottom" secondItem="RBo-Pr-THI" secondAttribute="bottom" constant="16" id="tir-g0-Ugl"/>
                             <constraint firstItem="EUr-uB-TY8" firstAttribute="top" secondItem="Ubz-ig-XR4" secondAttribute="top" id="zz5-DH-OC8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ubz-ig-XR4"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="AVz-kW-T8i" id="FHK-BF-EFP"/>
+                        <outlet property="titleLabel" destination="RBo-Pr-THI" id="m2y-c2-eGl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zut-HV-Qnm" userLabel="First Responder" sceneMemberID="firstResponder"/>
