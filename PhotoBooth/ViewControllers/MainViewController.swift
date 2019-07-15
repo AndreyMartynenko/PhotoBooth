@@ -129,6 +129,20 @@ private extension MainViewController {
         view.bringSubviewToFront(previewView)
     }
     
+    @IBAction private func toggleCameraButtonTapped(_ sender: UIButton) {
+        guard let currentCaptureDevice = currentCaptureDevice else { return }
+        
+        captureSession.beginConfiguration()
+        
+        switch currentCaptureDevice.position {
+        case .back:  configureCaptureInput(at: .front)
+        case .front: configureCaptureInput(at: .back)
+        default: break
+        }
+        
+        captureSession.commitConfiguration()
+    }
+    
 }
 
 extension MainViewController: AVCapturePhotoCaptureDelegate {

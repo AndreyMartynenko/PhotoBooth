@@ -28,6 +28,13 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vcf-2f-0J4">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARe-Pb-9ig">
+                                        <rect key="frame" x="8" y="0.0" width="47" height="44"/>
+                                        <state key="normal" title="Toggle"/>
+                                        <connections>
+                                            <action selector="toggleCameraButtonTapped:" destination="xZk-2r-zDV" eventType="touchUpInside" id="t0N-wA-V8O"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-va-4IS">
                                         <rect key="frame" x="165.5" y="0.0" width="44" height="44"/>
                                         <constraints>
@@ -50,7 +57,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="A8E-UY-4VD" secondAttribute="trailing" constant="8" id="4xP-tR-pWs"/>
+                                    <constraint firstItem="ARe-Pb-9ig" firstAttribute="leading" secondItem="vcf-2f-0J4" secondAttribute="leading" constant="8" id="Mrb-9z-2Ny"/>
+                                    <constraint firstItem="ARe-Pb-9ig" firstAttribute="top" secondItem="vcf-2f-0J4" secondAttribute="top" id="V0j-Cr-mtu"/>
                                     <constraint firstItem="bIQ-va-4IS" firstAttribute="centerX" secondItem="vcf-2f-0J4" secondAttribute="centerX" id="W2H-Mt-NHT"/>
+                                    <constraint firstAttribute="bottom" secondItem="ARe-Pb-9ig" secondAttribute="bottom" id="cE5-iH-Q4k"/>
                                     <constraint firstAttribute="bottom" secondItem="bIQ-va-4IS" secondAttribute="bottom" id="cWo-lq-dOS"/>
                                     <constraint firstItem="bIQ-va-4IS" firstAttribute="top" secondItem="vcf-2f-0J4" secondAttribute="top" id="gE3-xF-ExB"/>
                                     <constraint firstItem="A8E-UY-4VD" firstAttribute="top" secondItem="vcf-2f-0J4" secondAttribute="top" id="kWd-eS-lED"/>
